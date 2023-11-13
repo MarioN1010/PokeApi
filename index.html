@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokeapi</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src ="/script.js" defer></script>
+</head>
+<body>
+    <header class="container-header">
+        <div class="imagen-pokemon">
+            <img src="https://pbs.twimg.com/media/D9IkQYvXUAIC2kt?format=png&name=small" alt="pokemon">
+        </div>
+    </header>
+    <main class="general-container">
+        <div class="container-filter">
+            <input type="text" class="filter-pokemon" id="pokemon-filter">
+            <button class="btn-filter-name" id="btn-filter-name">Filter by Name</button>
+            <img class="img-resert" id="resert-img" src="/giphy.webp" alt="Reset Filters" onclick="resertFilter()">
+            </button>
+        </div>
+        <div class="container-pokemon-type">
+            <div class="filtro-imagnes">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8ddc4da-23dd-4502-b65b-378c9cfe5efa/dffvl0s-d443a3b4-fa4e-47a6-99b4-d2a769785614.png/v1/fit/w_828,h_828/grass_type_symbol_galar_by_jormxdos_dffvl0s-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2U4ZGRjNGRhLTIzZGQtNDUwMi1iNjViLTM3OGM5Y2ZlNWVmYVwvZGZmdmwwcy1kNDQzYTNiNC1mYTRlLTQ3YTYtOTliNC1kMmE3Njk3ODU2MTQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.6-S1a0_YYhlP6eXW5QqrJk4jtv6b5a3MRuugxqhJ6EA" alt="Planta" onclick="filterType('grass')">
+                <img src="https://pbs.twimg.com/media/Fyb5LpCWwAAcHHX.png" alt="Fuego" onclick="filterType('fire')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/1024px-Pok%C3%A9mon_Electric_Type_Icon.svg.png" alt="Eléctrico" onclick="filterType('electric')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg" alt="Tierra" onclick="filterType('ground')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Pok%C3%A9mon_Rock_Type_Icon.svg" alt="Roca" onclick="filterType('rock')">
+                <img src="https://storage.googleapis.com/nianticweb-media/pokemongo/types/ghost.png?cb=1" alt="Fantasma" onclick="filterType('ghost')">
+                <img src="https://lh3.googleusercontent.com/qA_Wy51X0febrlBYgoecyZDwHgvJSsajGLKZKrfERZqFgRALLzh32GnsjyyPFM21EJQGzkpGXH1gGxyTXoSofJGcn0rtX4w3KFK-mX08ZVCsnBY=s0" alt="Psíquico" onclick="filterType('psychic')">
+                <img src="https://lh3.googleusercontent.com/6-ZHDJxQekJnWz2aLRT4jvZCyOsfQY6a3K1Cr0yjq-AjFekUVdGEnnEMsjYaDZSrgznlEJEAoJxh8bMM6t2QGYk-NS4XX3aHKt9Id4zwMtdHQQ" alt="Volador" onclick="filterType('flying')">
+                <img src="https://lh3.googleusercontent.com/ePOZcVQom7_l7PEfxkd3aMcOovVHHv7iCNbQrtDpgaQA7LrlaGCFwexBcS8Iwl9LmYJSTb1lHtmWBkYBQilRXtiA4Uw-AVPn-bNx3C5tj_kDpQ" alt="Veneno" onclick="filterType('poison')">
+                <img src="https://lh3.googleusercontent.com/Hy3OuoKXRyxqHqmaQQZeCZVWSlvr5VA0Gm2SiXeYjuNCxrLxV4TmP6J-5RGIti7-h6sB03YdG2D6_sLj99mZIm4SL_uIJM142QE5ucj0wxsI4w" alt="Bicho" onclick="filterType('bug')">
+                <img src="https://storage.googleapis.com/nianticweb-media/pokemongo/types/water.png?cb=1" alt="Agua" onclick="filterType('water')">
+                <img src="https://lh3.googleusercontent.com/Pm0dZaHdQShzVVCkNcIJmg9HPFc9dr3xE85KBmss3Slfni_MCJZrfKL6xGgVgwVb7HVF1_GC_Y-YII__apnR8eEPTVjjapnBu0YjeKAoX3dG" alt="Normal" onclick="filterType('normal')">
+                <img src="https://storage.googleapis.com/nianticweb-media/pokemongo/types/ice.png?cb=1" alt="Hielo" onclick="filterType('ice')">
+            </div>
+        </div>
+        <div class="pokemon-container" id="container-pokemon"></div>
+    </main>
+</body>
+<footer>
+    <div class="container-footer"></div>
+        <h1 class="texto-redes-sociales">SÍGUENOS EN NUESTRAS REDES SOCIALES</h1>
+        <div class="container-redes">
+           <a href="https://www.facebook.com/PokemonOficialES/?brand_redir=230809307041021&locale=es_ES">
+                <img class="facebook" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png"  alt="Facebook">
+           </a> 
+           <a href="https://twitter.com/Pokemon_ES_ESP?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eautho">
+                <img class="twitter" src="/simbolo-x.png" alt="X">
+           </a>
+           <a href="https://www.instagram.com/pokemon/?hl=es">
+                <img class="insta" src="/icono insta.png" alt="Instagram">
+           </a>
+           <a href="https://www.pokemon.com/es">
+                <img class="pokmeon-oficial" src="/toppng.com-the-pokémon-company-logo-vector-512x512.png" alt="ThePokemonCompany">
+           </a>
+        </div>
+    </div>
+</footer>
+</html>
